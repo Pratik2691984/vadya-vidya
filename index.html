@@ -6,9 +6,37 @@
   <title>Vādya Vidyā v15 · Universal Musicological Ontology & Classical Studio</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Noto+Serif:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Myanmar:wght@400;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    *, *:before, *:after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #c9a227; --gold-dim: rgba(201,162,39,.25);
+      --bg-deep: #12050b; --bg-card: #1c0810; --bg-panel: #2a0b14;
+      --border-dim: #42141c; --border-bright: #691e2a;
+      --text-primary: #f6ead2; --text-secondary: #d4b896;
+      --accent-green: #22c55e; --accent-red: #ef4444; --accent-blue: #60a0d0;
+      --font-serif: 'Noto Serif', Georgia, serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body { font-family: var(--font-serif); background: var(--bg-deep); color: var(--text-primary); min-height: 100vh; padding-bottom: 120px; overflow-x: hidden; }
+    .glass { backdrop-filter: blur(14px); background: rgba(18,5,11,.92); }
+    .btn { cursor: pointer; transition: .2s; border: none; font-family: var(--font-serif); font-weight: 600; border-radius: 10px; padding: 7px 16px; font-size: .8rem; }
+    .btn-ghost { background: var(--bg-panel); border: 1px solid var(--border-bright); color: var(--text-primary); }
+    .btn-primary { background: var(--gold); color: #12050b; }
+    .btn-green { background: var(--accent-green); color: #12050b; }
+    .header-tabs { display: flex; gap: 4px; overflow-x: auto; flex: 1; }
+    .header-tab { padding: 6px 12px; border-radius: 999px; font-size: .72rem; white-space: nowrap; cursor: pointer; border: none; background: transparent; color: var(--text-secondary); font-family: var(--font-serif); }
+    .header-tab.active { background: var(--gold); color: #12050b; font-weight: 700; }
+    .pingal-badge { display: inline-block; background: var(--gold-dim); border: 1px solid var(--gold); border-radius: 999px; padding: 2px 10px; font-size: .65rem; color: var(--gold); font-family: var(--font-mono); }
+    .fixed-footer { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(18,5,11,.94); backdrop-filter: blur(14px); border-top: 1px solid var(--border-bright); padding: 8px 12px; z-index: 100; display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: center; }
+    textarea, input[type=text], input[type=search], select { background: var(--bg-card); border: 1px solid var(--border-bright); border-radius: 10px; padding: 8px 12px; color: var(--text-primary); font-family: var(--font-serif); font-size: .85rem; width: 100%; outline: none; }
+    input[type=range] { -webkit-appearance: none; height: 5px; background: #260c13; border-radius: 4px; }
+    input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; width: 16px; height: 16px; background: var(--gold); border-radius: 50%; }
+  </style>
 </head>
 <body>
-  <p>Placeholder — full studio follows in next commit if this succeeds.</p>
-  <script>location.replace('./studio.html')</script>
+  <div id="root"></div>
+  <script type="importmap">{"imports":{"react":"https://esm.sh/react@18.3.1?bundle","react-dom/client":"https://esm.sh/react-dom@18.3.1?bundle"}}</script>
+  <script type="module" src="./app.js"></script>
 </body>
 </html>
